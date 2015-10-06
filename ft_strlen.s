@@ -3,14 +3,13 @@ section .text
 global ft_strlen
 
 ft_strlen:
+	mov rsi, rdi
 	mov rax, 0
-	cmp byte[rdi], 0
-	je end
-
-loop:
-	inc rax
-	cmp byte[rdi + rax], 0
-	jg loop
+	mov ecx, -1
+	cld
+	repnz scasb
+	mov rax, -2
+	sub rax, rcx
 
 end:
 	ret

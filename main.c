@@ -34,7 +34,12 @@ int main(int argc, char **argv) {
 	str = strcat(str, str2);
 //	ft_bzero(str, 4);
 //	ft_puts(str);
-	char * str3 = ft_strdup(str);
-	printf("%s\n", str3);
+	char * str3 = malloc(6);
+	ft_bzero(str3, 6);
+	str3[0] = 'a';
+	str3[1] = 'b';
+	str3[2] = 'c';
+	ft_strdup(str3);
+//	printf("%s, %s, %d\n", str, str3, ft_strlen(str2));
 	return (0);
 }
