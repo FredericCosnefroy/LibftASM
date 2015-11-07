@@ -1,6 +1,8 @@
 #include "libftasm.h"
 #include <stdlib.h>
 #include <string.h>
+#include <fcntl.h>
+
 int main(int argc, char **argv) {
 
 	if (argc != 2)
@@ -8,38 +10,22 @@ int main(int argc, char **argv) {
 		printf("2 args\n");
 		return (0);
 	}
-	if (ft_isrange(argv[1][0], 'a', 'z'))
-		printf("OK1!\n");
-	else
-		printf("Fail1\n");
-	if (ft_isalpha(60))
-		printf("OK2!\n");
-	else
-		printf("Fail2!\n");
-	printf("%c\n", ft_toupper(argv[1][0]));
-	char * str = malloc(10);
-	strcpy(str, "aaaa");
-//	str[0] = 'A';
-//	str[1] = 'A';
-//	str[2] = 'A';
-//	str[3] = 'A';
-	char * str2 = malloc(6);
-	strcpy(str2, "lol");
-//	str2[1] = 'B';
-//	str2[2] = 'B';
-//	str2[3] = 'B';
-//	str2[4] = 'B';
-//	str2[5] = 'B';
-
-	str = strcat(str, str2);
-//	ft_bzero(str, 4);
-//	ft_puts(str);
-	char * str3 = malloc(6);
-	ft_bzero(str3, 6);
-	str3[0] = 'a';
-	str3[1] = 'b';
-	str3[2] = 'c';
-	ft_strdup(str3);
+//	if (ft_isrange(argv[1][0], 'a', 'z'))
+//		printf("OK1!\n");
+//	else
+//		printf("Fail1\n");
+//	if (ft_isalpha(60))
+//		printf("OK2!\n");
+//	else
+//		printf("Fail2!\n");
+	char * str3 = malloc(8);
+	ft_memcpy(str3, "Bonsoir", 8);
+//	printf("%s\n", str3);
+	//ft_strdup(str3);
+	char * str4 = ft_strdup(str3);
+	int fd = open(argv[1], O_RDONLY);
+//	printf("%s\n", str4);
+	ft_cat(fd);
 //	printf("%s, %s, %d\n", str, str3, ft_strlen(str2));
 	return (0);
 }

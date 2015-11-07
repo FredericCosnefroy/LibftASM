@@ -1,9 +1,9 @@
 section .text
-global ft_isrange
+global _ft_isrange
 
 ;int ft_inrange(char c, int start, int end)
 
-ft_isrange:
+_ft_isrange:
 	cmp rdi, rsi
 	jl false
 	cmp rdi, rdx

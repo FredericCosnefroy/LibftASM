@@ -4,11 +4,11 @@
 
 section .text
 
-global ft_puts
-extern ft_strlen
+global _ft_puts
+extern _ft_strlen
 
-ft_puts:
-	call ft_strlen
+_ft_puts:
+	call _ft_strlen
 	mov rsi, rdi
 	mov rdi, 1
 	mov rdx, rax

@@ -1,12 +1,12 @@
 section .text
 
-global ft_tolower
-extern ft_isrange
+global _ft_tolower
+extern _ft_isrange
 
-ft_tolower:
+_ft_tolower:
 	mov rsi, 'A'
 	mov rdx, 'Z'
-	call ft_isrange
+	call _ft_isrange
 	cmp rax, 1
 	jne end
 	add rdi, 32

@@ -1,15 +1,17 @@
 section .text
 
-global ft_strlen
+global _ft_strlen
 
-ft_strlen:
-	mov rsi, rdi
-	mov rax, 0
-	mov ecx, -1
-	cld
-	repnz scasb
-	mov rax, -2
-	sub rax, rcx
-
-end:
+_ft_strlen:
+	mov		rax, rdi
+	mov		cl, [rax]
+	cmp		cl, 0
+	jz		.ret
+.loop:
+	inc		rax
+	mov		cl, [rax]
+	cmp		cl, 0
+	jnz		.loop
+.ret:
+	sub		rax, rdi
 	ret

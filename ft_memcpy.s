@@ -1,9 +1,9 @@
 section .text
 
-global ft_memcpy
-extern ft_strlen
+global _ft_memcpy
+extern _ft_strlen
 
-ft_memcpy:
+_ft_memcpy:
 	push rdi
 	mov rcx, rdx
 	cld

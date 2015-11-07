@@ -1,8 +1,8 @@
 section .text
 
-global ft_memset
+global _ft_memset
 
-ft_memset:
+_ft_memset:
 	cmp rdx, 0
 	jz end
 	push rdi

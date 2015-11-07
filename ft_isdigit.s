@@ -1,10 +1,10 @@
 section .text
 
-global ft_isdigit
-extern ft_isrange
+global _ft_isdigit
+extern _ft_isrange
 
-ft_isdigit:
+_ft_isdigit:
 	mov rsi, '0'
 	mov rdx, '9'
-	call ft_isrange
+	call _ft_isrange
 	ret

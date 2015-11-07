@@ -1,8 +1,8 @@
 section .text
 
-global ft_bzero
+global _ft_bzero
 
-ft_bzero:
+_ft_bzero:
 	cmp rsi, 0
 	jz end
 	

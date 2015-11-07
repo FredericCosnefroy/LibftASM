@@ -5,7 +5,7 @@ TEST = test
 C_DIR = .
 O_DIR = .
 
-FLAGS = -f macho64 --prefix _
+FLAGS = -f macho64
 
 C_FILES = $(shell find $(C_DIR) -type f -print | grep "\.s")
 C_DIRS = $(shell find $(C_DIR) -type d -print)
@@ -16,7 +16,7 @@ O_FILES = $(C_FILES:$(C_DIR)/%.s=$(O_DIR)/%.o)
 all: $(NAME)
 
 $(NAME): $(O_FILES)
-	@ar -rcs $@ $^ && printf "\033[0;32m" || printf "\033[0;31m"
+	@ar -rc $@ $^ && printf "\033[0;32m" || printf "\033[0;31m"
 	@printf "%-34s \033[1;30m<<--\033[0;0m\n" "$@"
 
 $(O_DIR)/%.o: $(C_DIR)/%.s

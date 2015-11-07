@@ -1,10 +1,10 @@
 section .text
 
-global ft_strcat
-extern ft_strlen
+global _ft_strcat
+extern _ft_strlen
 
-ft_strcat:
-	call ft_strlen
+_ft_strcat:
+	call _ft_strlen
 	mov rcx, rdi
 	add rcx, rax
 	jmp loop

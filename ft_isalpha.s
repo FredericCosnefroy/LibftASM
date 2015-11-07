@@ -1,17 +1,17 @@
 section .text
 
-global ft_isalpha
-extern ft_isrange
+global _ft_isalpha
+extern _ft_isrange
 
-ft_isalpha:
+_ft_isalpha:
 	mov rsi, 'a'
 	mov rdx, 'z'
-	call ft_isrange
+	call _ft_isrange
 	cmp rax, 1
 	je true
 	mov rsi, 'A'
 	mov rdx, 'Z'
-	call ft_isrange
+	call _ft_isrange
 
 true:
 	ret

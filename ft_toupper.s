@@ -1,13 +1,13 @@
 section .text
 
-global ft_toupper
-extern ft_isrange
+global _ft_toupper
+extern _ft_isrange
 
-ft_toupper:
+_ft_toupper:
 	mov rcx, rdi
 	mov rsi, 'a'
 	mov rdx, 'z'
-	call ft_isrange
+	call _ft_isrange
 	cmp rax, 1
 	jne end
 	sub rcx, 32
